@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JuniorLoaders - GitHub Pages</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #aaa;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
+        }
+        .code-block {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 2rem;
+            font-family: monospace;
+            border-left: 5px solid #00c6ff;
+            overflow-x: auto;
+        }
+        footer {
+            margin-top: 3rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JuniorLoaders</h1>
+        <p class="subtitle">GitHub Pages site | Learning to code & share projects</p>
+        <p>Welcome to our GitHub Pages site! This is a simple template to get started.</p>
+        <p>You can edit this <code>index.html</code> to build your own portfolio, project page, or documentation.</p>
+        
+        <div class="code-block">
+            <span style="color: #00ff9d"># To clone this repo locally:</span><br>
+            git clone https://github.com/juninhackudo97-commits/JuniorLoaders.github.io.git<br>
+            cd JuniorLoaders.github.io<br>
+            code .
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/juninhackudo97-commits/JuniorLoaders.github.io" class="btn" target="_blank">📂 View Repository</a>
+            <a href="https://github.com/codespaces" class="btn" target="_blank">💻 Open in Codespaces</a>
+            <a href="https://pages.github.com" class="btn" target="_blank">📘 GitHub Pages Guide</a>
+        </div>
+    </div>
+
+    <footer>
+        Made with ❤️ using GitHub Pages | Last updated: <span id="date"></span>
+    </footer>
+
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
