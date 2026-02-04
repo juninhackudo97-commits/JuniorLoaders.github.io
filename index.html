@@ -1,116 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuniorLoaders - GitHub Pages</title>
+    <title>Controle de Licença</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            font-family: Consolas, monospace;
+            background: black;
+            color: lime;
+            margin: 0;
+            padding: 20px;
         }
         .container {
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            margin: 50px auto;
+            border: 2px solid lime;
+            padding: 20px;
+            border-radius: 5px;
         }
         h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: cyan;
+            border-bottom: 1px solid lime;
+            padding-bottom: 10px;
         }
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #aaa;
+        .status {
+            font-size: 48px;
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: #111;
         }
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+        .ativo {
+            color: lime;
+            text-shadow: 0 0 10px lime;
         }
-        .btn {
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(90deg, #0072ff, #00c6ff);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
+        .inativo {
+            color: red;
+            text-shadow: 0 0 10px red;
+        }
+        .url {
+            background: #222;
+            padding: 10px;
+            margin: 15px 0;
+            word-break: break-all;
+            border-left: 4px solid cyan;
+        }
+        button {
+            background: lime;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
             font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 114, 255, 0.4);
-        }
-        .code-block {
-            background: #1a1a2e;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 2rem;
+            cursor: pointer;
+            margin: 10px 5px;
             font-family: monospace;
-            border-left: 5px solid #00c6ff;
-            overflow-x: auto;
         }
-        footer {
-            margin-top: 3rem;
-            color: #777;
-            font-size: 0.9rem;
+        button:hover {
+            background: cyan;
+        }
+        .btn-bloquear {
+            background: red;
+            color: white;
+        }
+        .btn-bloquear:hover {
+            background: #ff4444;
+        }
+        .info {
+            margin-top: 30px;
+            padding: 10px;
+            background: #111;
+            font-size: 14px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🚀 JuniorLoaders</h1>
-        <p class="subtitle">GitHub Pages site | Learning to code & share projects</p>
-        <p>Welcome to our GitHub Pages site! This is a simple template to get started.</p>
-        <p>You can edit this <code>index.html</code> to build your own portfolio, project page, or documentation.</p>
+        <h1>🔧 CONTROLE DE LICENÇA</h1>
         
-        <div class="code-block">
-            <span style="color: #00ff9d"># To clone this repo locally:</span><br>
-            git clone https://github.com/juninhackudo97-commits/JuniorLoaders.github.io.git<br>
-            cd JuniorLoaders.github.io<br>
-            code .
+        <div class="url">
+            <strong>Endpoint:</strong><br>
+            https://juninhackudo97-commits.github.io/JuniorLoaders.github.io/licenca.txt
         </div>
-
-        <div class="links">
-            <a href="https://github.com/juninhackudo97-commits/JuniorLoaders.github.io" class="btn" target="_blank">📂 View Repository</a>
-            <a href="https://github.com/codespaces" class="btn" target="_blank">💻 Open in Codespaces</a>
-            <a href="https://pages.github.com" class="btn" target="_blank">📘 GitHub Pages Guide</a>
+        
+        <div class="status ativo" id="statusDisplay">
+            1
+        </div>
+        
+        <p style="text-align: center; font-size: 20px;" id="statusText">
+            ✅ SISTEMA LIBERADO
+        </p>
+        
+        <div style="text-align: center;">
+            <button onclick="setStatus(1)">✅ LIBERAR ACESSO</button>
+            <button class="btn-bloquear" onclick="setStatus(0)">❌ BLOQUEAR ACESSO</button>
+        </div>
+        
+        <div class="info">
+            <strong>Como funciona:</strong><br>
+            1. Seu programa em C++ lê este arquivo <code>licenca.txt</code><br>
+            2. Se encontrar "1" → programa executa<br>
+            3. Se encontrar "0" → mostra erro e fecha<br>
+            4. <strong>ATENÇÃO:</strong> GitHub Pages é estático. Você precisa COMMITAR manualmente a mudança.
         </div>
     </div>
 
-    <footer>
-        Made with ❤️ using GitHub Pages | Last updated: <span id="date"></span>
-    </footer>
-
     <script>
-        document.getElementById('date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
+        // Estado inicial
+        let currentStatus = 1;
+        
+        function setStatus(status) {
+            currentStatus = status;
+            const display = document.getElementById('statusDisplay');
+            const text = document.getElementById('statusText');
+            
+            display.textContent = status;
+            
+            if (status === 1) {
+                display.className = 'status ativo';
+                text.textContent = '✅ SISTEMA LIBERADO';
+                text.style.color = 'lime';
+            } else {
+                display.className = 'status inativo';
+                text.textContent = '❌ SISTEMA BLOQUEADO';
+                text.style.color = 'red';
+            }
+            
+            alert(`Status alterado para: ${status}\n\nPara aplicar a mudança:\n1. Vá no repositório do GitHub\n2. Edite o arquivo "licenca.txt"\n3. Coloque apenas "${status}"\n4. Commit e push\n5. Aguarde 1-2 minutos para o GitHub Pages atualizar`);
+        }
+        
+        // Simulação de atualização (não funciona sem backend)
+        console.log("⚠️ Este painel só mostra o status. Para mudar REALMENTE, edite o arquivo licenca.txt manualmente.");
     </script>
 </body>
 </html>
